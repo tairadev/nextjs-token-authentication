@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import { authService } from "../src/services/auth/authService";
+import Link from "next/link";
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -55,12 +56,12 @@ export default function HomeScreen() {
           value={values.senha}
           onChange={handleChange}
         />
-        {/* <pre>
-          {JSON.stringify(values, null, 2)}
-        </pre> */}
         <div>
           <button>Entrar</button>
         </div>
+
+        <Link href="/auth-page-ssr">auth-page-ssr</Link>
+        <Link href="/auth-page-static">auth-page-static</Link>
       </form>
     </div>
   );
